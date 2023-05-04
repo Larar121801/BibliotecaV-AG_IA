@@ -1,0 +1,26 @@
+{% extends './layout.html' %}
+
+{% block title %} T_Autores {% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Cruds/t_autores.css') }}">
+</head>
+<body>
+  <h1>Autores</h1>
+  <button onclick="obtenerAutores()">Obtener Autores</button>
+  <table id="tabla-autores">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Nacionalidad</th>
+        <th>Biografía</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <script src="{{url_for('static', filename='js/Cruds/t_autores.js')}}"></script>
+</body>
+
+{%endblock%}
