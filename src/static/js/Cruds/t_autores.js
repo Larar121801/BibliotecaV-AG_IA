@@ -23,3 +23,28 @@ function obtenerAutores() {
         });
       });
   }
+
+  const formAgregarAutor = document.getElementById('form-agregar-autor');
+  formAgregarAutor.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const nombre = document.getElementById('nombre').value;
+    const nacionalidad = document.getElementById('nacionalidad').value;
+    const biografia = document.getElementById('biografia').value;
+    const data = { nombre, nacionalidad, biografia };
+    fetch('/autores', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+      obtenerAutores();
+      alert(data.mensaje);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Ocurrió un error al agregar el autor');
+    });
+  });

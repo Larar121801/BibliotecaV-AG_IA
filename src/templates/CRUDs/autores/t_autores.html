@@ -4,7 +4,9 @@
 
 {% block body %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/Cruds/t_autores.css') }}">
+
 </head>
+
 <body>
   <h1>Autores</h1>
   <button onclick="obtenerAutores()">Obtener Autores</button>
@@ -20,7 +22,29 @@
     <tbody>
     </tbody>
   </table>
+  <h3>Agregar Autor</h3>
+  <form id="form-agregar-autor">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa el nombre del autor">
+    </div>
+    <div class="form-group">
+      <label for="nacionalidad">Nacionalidad</label>
+      <input type="text" class="form-control" id="nacionalidad" name="nacionalidad"
+        placeholder="Ingresa la nacionalidad del autor">
+    </div>
+    <div class="form-group">
+      <label for="biografia">Biografía</label>
+      <textarea class="form-control" id="biografia" name="biografia" rows="3"
+        placeholder="Ingresa la biografía del autor"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+  </form>
+
+
   <script src="{{url_for('static', filename='js/Cruds/t_autores.js')}}"></script>
+
 </body>
+
 
 {%endblock%}
