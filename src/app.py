@@ -7,9 +7,10 @@ from config import config
 from models.ModelUser import ModelUser
 from models.entities.User import Usuarios
 
+import pyttsx3
+
 app=Flask(__name__)
-
-
+engine = pyttsx3.init()
 
 db = MySQL(app)
 login_manager_app = LoginManager(app)
@@ -125,7 +126,7 @@ def p_autores():
         VALUES ('{0}', '{1}', '{2}')""".format(request.json['nombre'], request.json['nacionalidad'], request.json['biografia'])
         cursor.execute(sql)
         db.connection.commit() 
-        return jsonify({'mensaje': "Milagrosametne funciona version POST"})
+        return jsonify({'mensaje': "Milagrosametne fue registrado este Autor"})
     except Exception as ex: 
         return jsonify({'mensaje': "Esto no esta conectado a la BDA  aiuda"})
 
@@ -160,6 +161,48 @@ def d_autores(id):
     except Exception as ex:
         return jsonify({'mensaje': "No esta conectado a la base de datos XD"})
     
+
+
+# "ASISTENTE VIRTUAL"  parte del codigo del asistente virtual haber que hacemos con menos de 24hrs de presentación XD send help this'n no a joke XD
+
+
+def respuestas(command):
+    if 'hola' in command:
+        print('Comando recibido:', command)
+        response = 'Hola, ¿en qué puedo ayudarte?'
+    elif 'tiempo' in command:
+        print('Comando recibido:', command)
+        response = 'El tiempo hoy es soleado y agradable'
+    else:
+        print('Comando no reconocido:', command)
+        response = 'Lo siento, no entiendo lo que quieres decir'
+    print('Respuesta generada:', response)
+    return response
+
+@app.route('/asistent', methods=['GET', 'POST'])
+def respuesta_bot():
+    if request.method == 'POST':
+        command = request.form['command']
+        print('Comando recibido por POST:', command)
+        response = respuestas(command)
+        say(response)
+        return render_template('asistent.html', response=response)
+    else:
+        return render_template('asistent.html')
+    
+def say(response):
+    engine = pyttsx3.init()
+    # Verifica si el bucle de eventos ya está en ejecución
+    if not engine.isBusy():
+        # Inicia el bucle de eventos
+        print('Iniciando bucle de eventos...')
+        engine.runAndWait()
+    # Sintetiza la respuesta de voz
+    print('Sintetizando respuesta de voz:', response)
+    engine.say(response)
+
+
+
 
 
 

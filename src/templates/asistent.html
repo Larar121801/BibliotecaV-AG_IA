@@ -1,0 +1,14 @@
+{%extends './layout.html'%}
+
+
+{%block body%}
+
+<body>
+    <form method="POST" action="{{ url_for('respuesta_bot') }}">
+      <label for="command">Di algo:</label>
+      <input type="text" id="command" name="command">
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+
+{%endblock%}
