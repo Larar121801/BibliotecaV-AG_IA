@@ -1,0 +1,115 @@
+
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Libros de Género Dramático</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 180px;
+            height: 270px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .book-info {
+            flex: 1;
+        }
+
+        .book-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .book-author {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .book-description {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-top: 5px;
+        }
+
+        .book-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Libros de Género Dramático</h1>
+    
+    <ul>
+        <li>
+            <a href="https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photo/9888336/image/e1bbf27ba254eb19aba349fc1184a122" target="_blank">
+                <img src="https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photo/9888336/image/e1bbf27ba254eb19aba349fc1184a122" alt="Libro 1">
+            </a>
+            <div class="book-info">
+                <p class="book-title">Los Persas</p>
+                <p class="book-author">Equilo</p>
+                <p class="book-description">Los persas es una tragedia de la Antigua Grecia escrita por Esquilo en el año 472 a. C. Está ambientada después del triunfo griego en la batalla de Salamina, y el lamento de los persas por la derrota.</p>
+                <a class="book-link" href="https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photo/9888336/image/e1bbf27ba254eb19aba349fc1184a122" target="_blank">Ver más</a>
+            </div>
+        </li>
+        <li>
+            <a href="https://i.pinimg.com/originals/e7/d5/83/e7d583405b5548e3baee0f7512b1d4a2.jpg" target="_blank">
+                <img src="https://i.pinimg.com/originals/e7/d5/83/e7d583405b5548e3baee0f7512b1d4a2.jpg" alt="Libro 2">
+            </a>
+            <div class="book-info">
+                <p class="book-title">Los Duendes Buenos</p>
+                <p class="book-author">Jorge Dias Herrera</p>
+                <p class="book-description">"Los duendes buenos es una historia que puedes leerla y convertirla en una función de teatro o en un divertido juego de aventuras. Este cuento-teatro te relata las andanzas del gigante Envidión y sus vasallos, en su afán de conquistar el mundo. Lo verás persiguiendo a los amigos del bosque, a quienes apresa para encerrarlos en una cueva.</p>
+                <a class="book-link" href="https://i.pinimg.com/originals/e7/d5/83/e7d583405b5548e3baee0f7512b1d4a2.jpg" target="_blank">Ver más</a>
+            </div>
+        </li>
+        <li>
+            <a href="https://infolibros.org/wp-content/uploads/2020/07/Mil-soles-espl%C3%A9ndidos.jpg" target="_blank">
+                <img src="https://infolibros.org/wp-content/uploads/2020/07/Mil-soles-espl%C3%A9ndidos.jpg" alt="Libro 3">
+            </a>
+            <div class="book-info">
+                <p class="book-title">Mil Soles Espléndidos</p>
+                <p class="book-author">Khaled Hosseini</p>
+                <p class="book-description">"Mil soles espléndidos es una novela escrita en inglés por el estadounidense de origen afgano Khaled Hosseini. Publicada en castellano en 2007 por la Editorial Salamandra, es la segunda obra del autor después de Cometas en el cielo, el superventas que le dio celebridad internacional en 2003.</p>
+                <a class="book-link" href="https://infolibros.org/wp-content/uploads/2020/07/Mil-soles-espl%C3%A9ndidos.jpg" target="_blank">Ver más</a>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
+
+
+
+
+
+{% endblock %}

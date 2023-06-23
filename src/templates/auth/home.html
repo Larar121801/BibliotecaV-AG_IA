@@ -4,46 +4,8 @@
 
 {% block body %}
 
-<!-- <h1> Milagrosamente, {{ current_user.nombre  }}</h1>
- --><a  class="btn btn-secondary" href="{{ url_for('logout') }}"> Cerrar Sesion </a>
-
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light pt-3 d-none d-lg-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-      
 
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center text-lg-right">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-primary pl-3" href="">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-
-    <!-- Navbar Start -->
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
@@ -55,22 +17,12 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
-                        <a href="package.html" class="nav-item nav-link">Tour Packages</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu border-0 rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="single.html" class="dropdown-item">Blog Detail</a>
-                                <a href="destination.html" class="dropdown-item active">Destination</a>
-                                <a href="guide.html" class="dropdown-item">Travel Guides</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{{ url_for('libros') }}" class="nav-item nav-link">Libros</a>
+                        <a href="{{ url_for('discuciones') }}" class="nav-item nav-link">Discuciones</a>
+                        <a href="{{ url_for('encuesta') }}" class="nav-item nav-link">Encuestas</a> 
+                        <a href="{{ url_for('encuesta') }}" class="nav-item nav-link">Descargas</a>              
                     </div>
+                    <a  class="btn btn-secondary" href="{{ url_for('logout') }}"> Cerrar Sesion </a>
                 </div>
             </nav>
         </div>
@@ -79,14 +31,14 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid page-header">
+    <div class="container-fluid page-header" style="background-image: url('https://cdn.businessinsider.es/sites/navi.axelspringer.es/public/media/image/2022/03/libros-antiguos-2644117.jpg?tf=3840x'); background-size: cover; background-position: center;">
         <div class="container">
             <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-                <h3 class="display-4 text-white text-uppercase">Destination</h3>
+                <h3 class="display-4 text-white text-uppercase">LIBROS</h3>
                 <div class="d-inline-flex text-white">
                     <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
                     <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">Destination</p>
+                    <p class="m-0 text-uppercase">Descargas</p>
                 </div>
             </div>
         </div>
@@ -104,10 +56,10 @@
                             <div class="col-md-3">
                                 <div class="mb-3 mb-md-0">
                                     <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Destination</option>
-                                        <option value="1">Destination 1</option>
-                                        <option value="2">Destination 1</option>
-                                        <option value="3">Destination 1</option>
+                                        <option selected>Generos</option>
+                                        <option value="1">Lirico</option>
+                                        <option value="2">Narrativo</option>
+                                        <option value="3">Dramatico</option>
                                     </select>
                                 </div>
                             </div>
@@ -125,16 +77,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Duration</option>
-                                        <option value="1">Duration 1</option>
-                                        <option value="2">Duration 1</option>
-                                        <option value="3">Duration 1</option>
-                                    </select>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -148,11 +90,11 @@
     
 
     <!-- Destination Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" style="background-image: url('https://observatorio.tec.mx/wp-content/uploads/2022/05/librosdetexto.jpeg'); background-size: cover; background-position: center;>
         <div class="container pt-5 pb-3">
             <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destination</h6>
-                <h1>Explore Top Destination</h1>
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;"></h6>
+                <h1>Explora Nuevos Libros</h1>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -220,16 +162,9 @@
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="" class="navbar-brand">
-                    <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
+                    <h1 class="text-primary"><span class="text-white">SPOTY</span>BOOK</h1>
                 </a>
-                <p>Sed ipsum clita tempor ipsum ipsum amet sit ipsum lorem amet labore rebum lorem ipsum dolor. No sed vero lorem dolor dolor</p>
-                <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
-                <div class="d-flex justify-content-start">
-                    <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                <p>SpoTybook es una plataforma web con el proposito de exponer a las personas unas librerias de libros</p>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Our Services</h5>
@@ -288,7 +223,6 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
@@ -308,4 +242,4 @@
     <script src="js/main.js"></script>
 </body>
 
-{%endblock%}
+{% endblock %}

@@ -1,0 +1,112 @@
+
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Libros de Género Narrativo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 180px;
+            height: 270px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .book-info {
+            flex: 1;
+        }
+
+        .book-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .book-author {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .book-description {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-top: 5px;
+        }
+
+        .book-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Libros de Género Narrativo</h1>
+    
+    <ul>
+        <li>
+            <a href="https://quelibroleo.com/images/libros/libro-1479311392.jpg" target="_blank">
+                <img src="https://quelibroleo.com/images/libros/libro-1479311392.jpg" alt="Libro 1">
+            </a>
+            <div class="book-info">
+                <p class="book-title">El laberitno de los Espiritus</p>
+                <p class="book-author">Carlos Zafon</p>
+                <p class="book-description">El laberinto de los espíritus es una novela de Carlos Ruiz Zafón publicada en 2016. Es el cuarto y último libro de la saga del Cementerio de los libros olvidados, un ciclo de cuatro novelas interconectadas y ambientadas en la Barcelona misteriosa y gótica que va desde la era de la revolución industrial hasta los años posteriores a la guerra civil española.</p>
+                <a class="book-link" href="https://quelibroleo.com/images/libros/libro-1479311392.jpg" target="_blank">Ver más</a>
+            </div>
+        </li>
+        <li>
+            <a href="https://d3bj2wkomrw52r.cloudfront.net/static-img/v3/books/el-hacedor-de-hombres-180.jpg" target="_blank">
+                <img src="https://d3bj2wkomrw52r.cloudfront.net/static-img/v3/books/el-hacedor-de-hombres-180.jpg" alt="Libro 2">
+            </a>
+            <div class="book-info">
+                <p class="book-title">El hacedor de Hombres</p>
+                <p class="book-author">Carlos de Tomas</p>
+                <p class="book-description">"El hacedor de hombres es una obra intensa, entretenida y misteriosa. Llena de referencias subliminales a la literatura universal que el lector puede ir descubriendo a lo largo de su lectura. Una alegoría a la construcción de cualquier obra artística, principalmente a la razón última de la creación en la literatura".</p>
+                <a class="book-link" href="https://d3bj2wkomrw52r.cloudfront.net/static-img/v3/books/el-hacedor-de-hombres-180.jpg" target="_blank">Ver más</a>
+            </div>
+        </li>
+        <li>
+            <a href="https://d3bj2wkomrw52r.cloudfront.net/static-img/v2/books/el-legado-de-los-malditos-180.jpg" target="_blank">
+                <img src="https://d3bj2wkomrw52r.cloudfront.net/static-img/v2/books/el-legado-de-los-malditos-180.jpg" alt="Libro 3">
+            </a>
+            <div class="book-info">
+                <p class="book-title">El legado de los Malditos</p>
+                <p class="book-author">Vanesa Redondo</p>
+                <p class="book-description">"El hacedor de hombres es una obra intensa, entretenida y misteriosa. Llena de referencias subliminales a la literatura universal que el lector puede ir descubriendo a lo largo de su lectura. Una alegoría a la construcción de cualquier obra artística, principalmente a la razón última de la creación en la literatura".</p>
+                <a class="book-link" href="https://d3bj2wkomrw52r.cloudfront.net/static-img/v2/books/el-legado-de-los-malditos-180.jpg" target="_blank">Ver más</a>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
+
+
+{% endblock %}

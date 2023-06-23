@@ -1,0 +1,93 @@
+{% extends './layout.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opciones de Libros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 20px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Opciones de Libros</h1>
+        
+        <h2>Géneros Literarios</h2>
+        
+        <ul>
+            <li>
+                <a href="{{ url_for('dramatico') }}">
+                    <img src="https://s1.significados.com/foto/genero-dramatico-mascara-y-libro-6c.png" alt="Género Dramático">
+                    <p>Género Dramático</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('lirico') }}">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjtI7RMBBwvHKafxnWnzXoNW_ZSFa5UBPXr3MMmvjeuOjgewbZ-aueFB9X22vGITZZ23I&usqp=CAU" alt="Género Lírico">
+                    <p>Género Lírico</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('narrativo') }}">
+                    <img src="https://www.venelogia.com/uploads/2012/cara_libro.jpg" alt="Género Narrativo">
+                    <p>Género Narrativo</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+{% endblock %}

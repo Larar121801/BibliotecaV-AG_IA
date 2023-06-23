@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, Request
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, Request, make_response
 from flask_mysqldb import MySQL
 from flask_login import LoginManager, login_user,logout_user, login_required
 
@@ -7,7 +7,7 @@ from config import config
 from models.ModelUser import ModelUser
 from models.entities.User import Usuarios
 
-import pyttsx3, requests, random 
+import pyttsx3, requests, random
 
 app=Flask(__name__)
 
@@ -160,10 +160,33 @@ def d_autores(id):
         return jsonify({'mensaje': "Milogrosamente funciona version DELETE"})
     except Exception as ex:
         return jsonify({'mensaje': "No esta conectado a la base de datos XD"})
-    
 
 
+#PARDE DE LOS LIBROS
+@app.route('/libros')
+def libros():
+    return render_template('auth/libros.html')
 
+@app.route('/libros/dramatico')
+def dramatico():
+    return render_template('auth/g_dramatico.html')
+
+@app.route('/libros/lirico')
+def lirico():
+    return render_template('auth/g_lirico.html')
+
+@app.route('/libros/narrativo')
+def narrativo():
+    return render_template('auth/g_narrativo.html')
+
+
+@app.route('/discuciones')
+def discuciones():
+    return render_template('auth/discuciones.html')
+
+@app.route('/encuesta')
+def encuesta():
+    return render_template('auth/encuesta.html')
 
 
 
@@ -173,4 +196,4 @@ if __name__ == '__main__':
     app.register_error_handler(401, status_401)
     app.register_error_handler(404, status_404)
     app.run()   
-
+    

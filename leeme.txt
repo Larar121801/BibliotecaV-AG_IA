@@ -1,0 +1,48 @@
+Herramientas que se usaron para el avance
+ 	Lenguaje de Programación - Python
+ 	Framework - Flask
+	Base de Datos Relacional - MySQL
+Para agilizar el proceso el proyecto tiene esta en un repositorio en GitHub
+
+https://github.com/Larar121801/BibliotecaV-AG_IA.git
+
+Puede abrir el proyecto con GitHub Desktop para poder clonar el repositorio
+
+La IDE del proyecto fue Visual Studio Code y para la parte de MySQL se uso Xammp
+
+
+Instalación de librerias y herramientas
+
+Flask
+pip install flask
+
+Base de datos
+pip install mysqlclient
+pip install flask-mysqldb
+
+Login
+pip install flask-login
+
+Voice
+pip install pyttsx3
+
+
+Base de datos
+
+En mysql crear la base de datos
+	CREATE DATABASE biblitoecav
+	Importar el Archivo .sql encontrado en el comprimido
+
+Para poder iniciar el proyecto vaya a la carpeta app.py en el codigo de click derecho en
+la parte del codigo y de click en la parte de “Run Python File in Terminal”
+
+En la sección de la terminal le saldrá una dirección copie y pegue la dirección en su
+navegador
+
+Lo llevara a la primera vista del proyecto
+
+Llene los datos con los siguientes datos
+
+Nombre: Lara2
+Correo: r2@gmail.com
+Contraseña: holaXD

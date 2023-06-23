@@ -1,0 +1,136 @@
+
+
+{% block body %}
+
+<!-- generar_pdf.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Encuesta de Temas de Libros</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-bottom: 5px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Encuesta de Temas de Libros</h1>
+    <p>Por favor, completa la siguiente encuesta:</p>
+
+    <form id="encuestaForm">
+        <h2>Pregunta 1: ¿Cuál es tu género literario favorito?</h2>
+        <input type="radio" name="pregunta1" value="Ficción" required> Ficción<br>
+        <input type="radio" name="pregunta1" value="Romance"> Romance<br>
+        <input type="radio" name="pregunta1" value="Misterio"> Misterio<br>
+        <input type="radio" name="pregunta1" value="Ciencia ficción"> Ciencia ficción<br>
+        <input type="radio" name="pregunta1" value="Fantasía"> Fantasía<br>
+        <input type="radio" name="pregunta1" value="Biografía"> Biografía<br>
+        <input type="radio" name="pregunta1" value="No ficción"> No ficción<br>
+        <input type="radio" name="pregunta1" value="Otro"> Otro<br><br>
+
+        <h2>Pregunta 2: ¿Cuál es tu autor(a) favorito(a)?</h2>
+        <input type="text" name="pregunta2" required><br><br>
+
+        <h2>Pregunta 3: ¿Prefieres libros físicos o libros electrónicos?</h2>
+        <input type="radio" name="pregunta3" value="Físico" required> Físico<br>
+        <input type="radio" name="pregunta3" value="Electrónico"> Electrónico<br>
+        <input type="radio" name="pregunta3" value="Ambos"> Ambos<br><br>
+
+        <h2>Pregunta 4: ¿Cuántos libros lees en promedio al mes?</h2>
+        <input type="number" name="pregunta4" min="0" required><br><br>
+
+        <h2>Pregunta 5: ¿Qué tipo de trama prefieres en un libro?</h2>
+        <input type="radio" name="pregunta5" value="Suspenso" required> Suspenso<br>
+        <input type="radio" name="pregunta5" value="Aventura"> Aventura<br>
+        <input type="radio" name="pregunta5" value="Drama"> Drama<br>
+        <input type="radio" name="pregunta5" value="Romántica"> Romántica<br>
+        <input type="radio" name="pregunta5" value="Histórica"> Histórica<br><br>
+
+        <h2>Pregunta 6: ¿Prefieres libros independientes o series/trilogías?</h2>
+        <input type="radio" name="pregunta6" value="Independientes" required> Independientes<br>
+        <input type="radio" name="pregunta6" value="Series/Trilogías"> Series/Trilogías<br><br>
+
+        <h2>Pregunta 7: ¿Qué te motiva a leer un libro? (escoge minimo 2 opciones)</h2>
+        <input type="checkbox" name="pregunta7[]" value="Recomendación personal"> Recomendación personal<br>
+        <input type="checkbox" name="pregunta7[]" value="Reseñas positivas"> Reseñas positivas<br>
+        <input type="checkbox" name="pregunta7[]" value="Portada atractiva"> Portada atractiva<br>
+        <input type="checkbox" name="pregunta7[]" value="Sinopsis interesante"> Sinopsis interesante<br><br>
+
+        <h2>Pregunta 8: ¿Cuál es tu libro favorito?</h2>
+        <input type="text" name="pregunta8" required><br><br>
+
+        <h2>Pregunta 9: Cargar imagen de tu libro favorito:</h2>
+        <input type="file" name="pregunta9" accept="image/*"><br><br>
+
+        <input type="submit" value="Enviar encuesta">
+    </form>
+
+
+    <script>
+        document.getElementById("encuestaForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var doc = new jsPDF();
+            var yOffset = 30; // Valor para ajustar la posición vertical del texto
+
+            doc.setFontSize(18);
+            doc.text("Encuesta de Temas de Libros", 20, yOffset);
+
+            doc.setFontSize(12);
+
+            var preguntas = document.querySelectorAll("form#encuestaForm h2");
+            var respuestas = document.querySelectorAll("form#encuestaForm input[type='radio']:checked, form#encuestaForm input[type='checkbox']:checked, form#encuestaForm input[type='text'], form#encuestaForm input[type='file']");
+
+            for (var i = 0; i < preguntas.length; i++) {
+                var pregunta = preguntas[i].textContent;
+                var respuesta = respuestas[i].value || "";
+
+                doc.text(pregunta, 20, yOffset + 10);
+                doc.text(respuesta, 20, yOffset + 20);
+
+                yOffset += 30; // Aumentar el valor para separar las preguntas y respuestas en el eje Y
+            }
+
+            doc.save("encuesta_libros.pdf");
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends './layout.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Foro de Discusiones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9; /* Fondo de color de libro */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .topic {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+
+        .topic-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .topic-details {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .topic-description {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .post {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+
+        .post-author {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .post-content {
+            font-size: 14px;
+        }
+
+        .reply-form {
+            margin-top: 20px;
+        }
+
+        .reply-form textarea {
+            width: 100%;
+            height: 100px;
+            resize: vertical;
+        }
+
+        .reply-form button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Foro de Discusiones</h1>
+
+    <div class="topic">
+        <h2 class="topic-title">Canon Literario</h2>
+        <p class="topic-details">Lara Ramos | 22/06/2023</p>
+        <p class="topic-description">¿Cuáles son los criterios adecuados para seleccionar qué obras merecen formar parte del canon literario y cuáles deben ser excluidas?</p>
+    </div>
+
+    <div class="post">
+        <h2 class="topic-title">Interpretación y significado</h2>
+        <p class="post-author">Mauricio Dylan | 23/06/23</p>
+        <p class="post-content">¿Hasta qué punto la interpretación de una obra literaria debe basarse en la intención del autor? ¿Es posible una interpretación válida independiente de la intención original?</p>
+    </div>
+
+    <div class="post">
+        <h2 class="topic-title">Autoría y originalidad</h2>
+        <p class="post-author">Ejemplo | 0/0/0</p>
+        <p class="post-content">¿En qué medida una obra literaria es original y qué influencias externas son aceptables? ¿Existe la originalidad absoluta o todas las obras son resultado de influencias previas?</p>
+    </div>
+
+    <div class="reply-form">
+        <textarea placeholder="Escribe tu respuesta"></textarea>
+        <button type="submit">Enviar</button>
+    </div>
+</body>
+</html>
+
+
+
+{% endblock %}
